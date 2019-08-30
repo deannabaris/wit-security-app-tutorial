@@ -1,0 +1,17 @@
+<html>
+<header>
+</header>
+<body>
+	<h1>Super Cool Security Dashboard</h1>
+	<div>
+		<h2>VirusTotal URL Test</h2>
+		<form route="/" method="POST">
+    		<input name="text">
+    		<input type="submit">
+		</form>
+		{% if data %}
+  		<h3>{{ data }}</h3>
+		{% endif %}
+	</div>
+</body>
+</html>

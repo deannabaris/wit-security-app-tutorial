@@ -1,0 +1,3 @@
+# TBD on Install python - homebrew package installer (mac), yum/dpkg (dpkg), manual install & build idk how you do this on windows
+
+pip3 install flask
