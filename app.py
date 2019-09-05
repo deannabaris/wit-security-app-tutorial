@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world(data=None):
+def dashboard(data=None):
     return render_template('index.html', data=data)
 
 @app.route('/', methods=['POST'])
@@ -15,9 +15,17 @@ def virus_total_form_post():
     params = {'apikey': os.environ['VIRUS_TOTAL_API_KEY'], 'resource': text.upper()}
     response = requests.get(url, params=params)
 
+    # Validate API returned 200 status
+    if response.status_code != 200:
+        return dashboard(data=f"API returned error code: {response.status_code}")
+
+    # If no data was found for the provided resource, the "positives" and "total" fields will not
+    # be available. Instead, print the "verbose_msg" field
+    content = response.json()
+    if 'positives' not in content.keys() or 'total' not in content.keys():
+        return dashboard(data=f"{text}: {content['verbose_msg']}")
+
     total_found = response.json()['positives']
     engines_tested=response.json()['total']
-
-    # Show all the metadata
     safe_url = text.replace('.', '{.}')
-    return hello_world(data=f"{safe_url}: found {total_found} positive results on {engines_tested} engines")
+    return dashboard(data=f"{safe_url}: found {total_found} positive results on {engines_tested} engines")
