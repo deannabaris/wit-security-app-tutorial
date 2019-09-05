@@ -1,18 +1,21 @@
 body {
 	background-color: black;
-	/*color: #2cfc03;*/
 	color: white;
 	text-align: center;
-	font-family: "Courier New", Courier, monospace;
+	font-family: "Helvetica", sans-serif;
 }
 
 h1 {
 	font-size: 48px;
 }
 
+#header {
+	padding: 1vh;
+}
+
 .security-widget {
 	background: #a3b8bf;
 	width: 80vw;
-	margin-left: 10vw;
+	margin: 0 auto;
 	padding: 1vh;
 }
