@@ -13,7 +13,7 @@ def virus_total_form_post():
     text = request.form['text']
     # processed_text = text.upper()
     url = 'https://www.virustotal.com/vtapi/v2/url/report'
-    params = {'apikey': os.environ['API_KEY'], 'resource': text.upper()}
+    params = {'apikey': os.environ['VIRUS_TOTAL_API_KEY'], 'resource': text.upper()}
     response = requests.get(url, params=params)
 
     total_found = response.json()['positives']

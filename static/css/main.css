@@ -1,0 +1,18 @@
+body {
+	background-color: black;
+	/*color: #2cfc03;*/
+	color: white;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+.security-widget {
+	background: #a3b8bf;
+	width: 80vw;
+	margin-left: 10vw;
+	padding: 1vh;
+}
