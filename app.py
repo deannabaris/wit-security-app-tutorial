@@ -7,8 +7,16 @@ app = Flask(__name__)
 VIRUS_TOTAL_API_KEY = os.environ['VIRUS_TOTAL_API_KEY']
 
 @app.route('/')
-def dashboard(url_data=None, file_data=None):
-    return render_template('index.html', url_data=url_data, file_data=file_data)
+def dashboard(url_data=None, url_color="#ffffff", file_data=None, file_color="#ffffff"):
+    return render_template('index.html', url_data=url_data, url_color=url_color, file_data=file_data, file_color=file_color)
+
+def result_color(positive_results, total_results):
+    if positive_results == 0:
+        return "#2fa350"
+    elif positive_results < 3:
+        return "#f5ea95"
+    else:
+        return "#a61b0c"
 
 @app.route('/virustotal/url', methods=['POST'])
 def virus_total_url():
@@ -32,7 +40,7 @@ def virus_total_url():
     safe_url = text.replace('.', '{.}')
 
     url_data = f'{safe_url}: found {total_found} positive results on {engines_tested} engines'
-    return dashboard(url_data=url_data)
+    return dashboard(url_data=url_data, url_color=result_color(total_found, engines_tested))
 
 @app.route('/virustotal/file', methods=['POST'])
 def virus_total_file():
@@ -56,4 +64,4 @@ def virus_total_file():
     engines_tested=response.json()['total']
 
     file_data = f'{file_hash}: found {total_found} positive results on {engines_tested} engines'
-    return dashboard(file_data=file_data)
+    return dashboard(file_data=file_data, file_color=result_color(total_found, engines_tested))

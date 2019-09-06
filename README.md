@@ -8,6 +8,7 @@ This is a tutorial for a dashboard of security utilities built using Python's Fl
 #### Python3
 
 Windows Installation Instructions: https://docs.python.org/3/using/windows.html
+
 OS X (Mac) Installation Instructions: https://docs.python-guide.org/starting/install3/osx/
 
 Alternatively, the latest version of Python3 is available for download here: https://www.python.org/downloads/
