@@ -43,6 +43,14 @@ The `~/.bash_profile` file is loaded with each new Terminal session, so adding t
 
 Open your browser to http://localhost:5000 to see the site HTML
 
+Useful `flask run` options:
+
+* Run over HTTP (make sure you use the HTTPS version of the url: https://localhost:5000): `flask run --cert <cert> --key <key>` 
+  * Generate self-signed certificate: ```openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out cert.pem```
+* Run externally accessible application: `flask run --host 0.0.0.0`
+* Use a port other than 5000: `flask run --port <port>`
+
+
 ### Additional Resources
 * Presentation slide deck:
 * Flask documentation: https://flask.palletsprojects.com/en/1.1.x/ 
