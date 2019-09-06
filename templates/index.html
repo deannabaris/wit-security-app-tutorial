@@ -9,13 +9,40 @@
 	</div>
 	<div class="security-widget">
 		<h2>VirusTotal URL Test</h2>
-		<form route="/" method="POST">
+		<h3>Enter a URL</h3>
+		<form action="/virustotal/url" method="POST">
     		<input name="text">
     		<input type="submit">
 		</form>
-		{% if data %}
-  		<h3>{{ data }}</h3>
+		{% if url_data %}
+  		<h3>{{ url_data }}</h3>
 		{% endif %}
 	</div>
+
+	<div class="security-widget">
+		<h2>VirusTotal File Test</h2>
+		<h3>Enter a file hash</h3>
+		<form action="/virustotal/file" method="POST">
+    		<input name="text">
+    		<input type="submit">
+		</form>
+		{% if file_data %}
+  		<h3>{{ file_data }}</h3>
+		{% endif %}
+	</div>
+
+
+
+<!-- 	<div class="security-widget">
+		<h2>Have I Been Pwned?</h2>
+		<h3>Enter an email or username to see if it's been compromised</h3>
+		<form action="/pwned" method="POST">
+    		<input name="text">
+    		<input type="submit">
+		</form>
+		{% if p_data %}
+  		<h3>{{ p_data }}</h3>
+		{% endif %}
+	</div> -->
 </body>
 </html>

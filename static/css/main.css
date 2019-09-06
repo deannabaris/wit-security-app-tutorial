@@ -9,6 +9,12 @@ h1 {
 	font-size: 48px;
 }
 
+div {
+	margin: 0 auto;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+}
+
 #header {
 	padding: 1vh;
 }
@@ -16,6 +22,5 @@ h1 {
 .security-widget {
 	background: #a3b8bf;
 	width: 80vw;
-	margin: 0 auto;
 	padding: 1vh;
 }

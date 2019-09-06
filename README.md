@@ -3,9 +3,13 @@ Security Dashboard
 
 Tufts WIT Conference 2019 Flask tutorial
 
-### Virus Total API Key
+This is a tutorial for a dashboard of security utilities built using Python's Flask webserver framework. It uses the VirusTotal API as the basis for a single security resource page. 
 
-An API key works as an authentication mechanism to query external APIs. To get an API key with Virus Total, create a free account here: https://www.virustotal.com/gui/join-us. Once you have an account, log on and click your name in the top right corner of the screen to reveal a drop down menu, then select "API key". On the API Key page, copy the key to the clipboard. 
+### API Keys
+
+An API key works as an authentication mechanism for querying external APIs. They are used to track API use and prevent malicious users from abusing APIs.
+
+To get an API key with Virus Total, create a free account here: https://www.virustotal.com/gui/join-us. Once you have an account, log on and click your name in the top right corner of the screen to reveal a drop down menu, then select "API key". On the API Key page, copy the key to the clipboard. 
 
 Including hardcoded API keys in your code is bad practice, so we're going to use environment variables to avoid unnecessary information disclosure. Open up Terminal/Command Prompt, and add the following line to the bottom of your ~/.bash_profile, substituting <API_KEY> with your actual copied API key. 
 
