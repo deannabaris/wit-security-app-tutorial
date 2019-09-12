@@ -52,5 +52,4 @@ Useful `flask run` options:
 
 
 ### Additional Resources
-* Presentation slide deck:
 * Flask documentation: https://flask.palletsprojects.com/en/1.1.x/ 
